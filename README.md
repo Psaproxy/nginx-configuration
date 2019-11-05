@@ -60,7 +60,14 @@ To improve the security, we add the Diffie-Hellman (DH) key exchange parameters.
 $ openssl dhparam -out /etc/ssl/certs/dhparam-2048.pem 2048
 ```
 
-# Test and reload Nginx
+# Test, Reload
+
+For any changes which will affect Nginx, we need to test the configuration before applying:
+
+```bash
+$ nginx -t
+```
+Or can do like this will reload Nginx right after then:
 
 ```bash
 $ nginx -t && nginx -s reload
@@ -68,3 +75,6 @@ $ nginx -t && nginx -s reload
 
 # Result in Qualys SSL Labs
 
+<p align="center">
+  <img src="./ssl-labs-result.png?raw=true" alt="SSL Labs Result"/>
+</p>
